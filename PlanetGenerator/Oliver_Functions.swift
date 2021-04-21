@@ -8,6 +8,27 @@
 import Foundation
 import UIKit
 
+//Data Structure for PlanetCode.
+struct PlanetCode {
+    var size: Int = 0
+    var atmo: Int = 0
+    var hydr: Int = 0
+    var temp: Int = 0
+    var popu: Int = 0
+    var mGov: (class:Int, strength:Int, diff:String, name:String) = (class:0, strength: 0, diff: "", name: "")
+    var fact: [(class:Int, strength:Int, diff:String, name:String)] = []
+    var lawL: Int = 0
+    var star: Character = "X"
+    var navy: Bool = false
+    var scou: Bool = false
+    var reas: Bool = false
+    var TASh: Bool = false
+    var tech: Int = 0
+    var TrCo: [String] = []
+}
+
+// Function rolls a number of D6 Specified by the argument "dice" and returns the
+// Integer value of the result.
 func rollD6(dice:Int) -> Int{
     var value: Int = 0
     for _ in 0...dice {
@@ -16,10 +37,14 @@ func rollD6(dice:Int) -> Int{
     return value
 }
 
+// Function rolls a D66, which is two D6 with the first being multiplied by ten.
 func rollD66() -> Int{
     return (10 * Int.random(in: 1...6) + Int.random(in: 1...6))
 }
 
+// This is a lookup table for cultural differences.
+// We do not provide explainations beyond the term, because the user is expected to
+// use this as a "Story Seed" instead of a prescription.
 func differenceLookup(selection: Int) -> String{
     var returnString = ""
     switch selection {
@@ -67,29 +92,12 @@ func differenceLookup(selection: Int) -> String{
     }
 }
 
-struct PlanetCode {
-    var size: Int = 0
-    var atmo: Int = 0
-    var hydr: Int = 0
-    var temp: Int = 0
-    var popu: Int = 0
-    var mGov: (class:Int, strength:Int, diff:String, name:String) = (class:0, strength: 0, diff: "", name: "")
-    var fact: [(class:Int, strength:Int, diff:String, name:String)] = []
-    var lawL: Int = 0
-    var star: Character = "X"
-    var navy: Bool = false
-    var scou: Bool = false
-    var reas: Bool = false
-    var TASh: Bool = false
-    var tech: Int = 0
-    var TrCo: [String] = []
-}
-
-
-
+// Function generates a PlanetCode Structure.
+// This is effectively a reusable initializer for the structure.
 func generatePlanet() -> PlanetCode{
     var planet: PlanetCode! = PlanetCode()
     
+    // Generate Planet Size, and then normalize the value if it went out of range.
     planet.size = (rollD6(dice: 2) - 2)
     if planet.size < 0 {
         planet.size = 0
@@ -98,6 +106,7 @@ func generatePlanet() -> PlanetCode{
         planet.size = 10
     }
     
+    // Generate Planet Atmosphere, and then normalize the value if it went out of range.
     planet.atmo = (rollD6(dice: 2) - 7 + planet.size)
     if planet.atmo < 0 {
         planet.atmo = 0
@@ -106,7 +115,9 @@ func generatePlanet() -> PlanetCode{
         planet.atmo = 15
     }
     
+    // Generate Planet Temperature.
     planet.temp = (rollD6(dice: 2))
+    // See if any modifiers from atmosphere apply.
     switch planet.atmo {
     case 2:
         planet.temp -= 2
@@ -147,6 +158,7 @@ func generatePlanet() -> PlanetCode{
     default:
         break
     }
+    // Normalize Temperature.
     if planet.temp < 0 {
         planet.temp = 0
     }
@@ -154,6 +166,7 @@ func generatePlanet() -> PlanetCode{
         planet.temp = 12
     }
     
+    // Calculate planet Hydrography, checking for situational modifiers.
     if planet.size == 0 || planet.size == 1{
         planet.hydr = 0
     }
@@ -163,12 +176,14 @@ func generatePlanet() -> PlanetCode{
     else{
         planet.hydr = (rollD6(dice: 2) - 7 + planet.atmo)
     }
+    // Apply Modifiers based on planet Temperature.
     if (10 <= planet.temp && planet.temp <= 11){
         planet.hydr -= 2
     }
     else if planet.temp >= 12{
         planet.hydr -= 6
     }
+    // Normalize.
     if planet.hydr < 0{
         planet.hydr = 0
     }
@@ -176,6 +191,7 @@ func generatePlanet() -> PlanetCode{
         planet.hydr = 10
     }
     
+    // Generate Planet Population.
     planet.popu = rollD6(dice: 2) - 2
     if planet.popu < 0{
         planet.popu = 0
@@ -184,6 +200,8 @@ func generatePlanet() -> PlanetCode{
         planet.popu = 12
     }
     
+    // Generate Planet's Main Faction
+    // TODO: Replace this with a call to GenerateFaction() once that function works.
     planet.mGov.class = rollD6(dice: 2) - 7 + planet.popu
     if planet.mGov.class < 0{
         planet.mGov.class = 0
@@ -194,7 +212,7 @@ func generatePlanet() -> PlanetCode{
     planet.mGov.diff = differenceLookup(selection: rollD66())
     planet.mGov.name = "Please enter a Name"
     
-    
+    // Setup the Planetary Law Level, based on Government.
     planet.lawL = rollD6(dice: 2) - 7 + planet.mGov.class
     if planet.lawL < 0{
         planet.lawL = 0
@@ -203,6 +221,7 @@ func generatePlanet() -> PlanetCode{
         planet.lawL = 9
     }
     
+    // Calculate Starport Class, after finding population modifier.
     var popuMod: Int = 0
     if planet.popu >= 10{
         popuMod = 2
@@ -218,6 +237,7 @@ func generatePlanet() -> PlanetCode{
     }
     let starportIntermediary = rollD6(dice: 2) + popuMod
     
+    // Look up what that dice roll actually means.
     if starportIntermediary <= 2{
         planet.star = "X"
     }
@@ -237,6 +257,7 @@ func generatePlanet() -> PlanetCode{
         planet.star = "A"
     }
     
+    // Generate pressence of Navy, Scout, and Research Bases (or TAS Hostels).
     if planet.star == "A"{
         planet.TASh = true
         if rollD6(dice: 2) > 8{
@@ -325,7 +346,8 @@ func generatePlanet() -> PlanetCode{
     else if planet.mGov.class == 13 || planet.mGov.class == 14{
         techMod -= 2
     }
-    // Generate tech level and prevent negatives from existing. There's nothing pre-pre-neolithic.
+    // Generate tech level and prevent negatives from existing. There's nothing lower than 0
+    // when 0 represents "Pre-Neolithic Society" (They haven't even figured out how to use a stick).
     planet.tech = rollD6(dice: 2) + techMod
     if planet.tech < 0{
         planet.tech = 0
@@ -347,7 +369,10 @@ func generatePlanet() -> PlanetCode{
         planet.tech = 10
     }
     
-    // Assign Trade Codes
+    // Assign Trade Codes. This is a complicated process of looking up some intricate conditional
+    // Statements.
+    // Ignore the odd formatting on the first one, that happened as part of an attempt to fix a
+    // bug that is no longer present.
     if (planet.atmo >= 4 && planet.atmo <= 9) {
         if (planet.hydr >= 4 && planet.hydr <= 8){
             if (planet.popu >= 5 && planet.popu <= 7){
