@@ -1,10 +1,3 @@
-//
-//  Oliver_Functions.swift
-//  PlanetGenerator
-//
-//  Created by Michael Oliver on 4/21/21.
-//
-
 import Foundation
 import UIKit
 
@@ -492,3 +485,5 @@ func generatePlanet() -> PlanetCode{
     return planet
 }
 
+var planet = generatePlanet()
+print(planet.fact[0])

@@ -26,6 +26,7 @@
 		71935C8B2630A883006A500B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71935C8D2630A883006A500B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71935C992630AB61006A500B /* Oliver_Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oliver_Functions.swift; sourceTree = "<group>"; };
+		71935CC22630B235006A500B /* OliverTestYard.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OliverTestYard.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		71935C732630A882006A500B = {
 			isa = PBXGroup;
 			children = (
+				71935CC22630B235006A500B /* OliverTestYard.playground */,
 				71935C7E2630A882006A500B /* PlanetGenerator */,
 				71935C7D2630A882006A500B /* Products */,
 			);
