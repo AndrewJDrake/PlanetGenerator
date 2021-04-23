@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70B24CCF2631F336007140C9 /* PlanetDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B24CCE2631F336007140C9 /* PlanetDisplayViewController.swift */; };
+		70B24CD326327402007140C9 /* FractionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B24CD226327402007140C9 /* FractionDisplayViewController.swift */; };
 		71935C802630A882006A500B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71935C7F2630A882006A500B /* AppDelegate.swift */; };
 		71935C822630A882006A500B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71935C812630A882006A500B /* SceneDelegate.swift */; };
 		71935C842630A882006A500B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71935C832630A882006A500B /* ViewController.swift */; };
@@ -14,9 +16,12 @@
 		71935C892630A883006A500B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71935C882630A883006A500B /* Assets.xcassets */; };
 		71935C8C2630A883006A500B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71935C8A2630A883006A500B /* LaunchScreen.storyboard */; };
 		71935C9A2630AB61006A500B /* Oliver_Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71935C992630AB61006A500B /* Oliver_Functions.swift */; };
+		71935CC62632AF12006A500B /* DetailLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71935CC52632AF12006A500B /* DetailLookup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70B24CCE2631F336007140C9 /* PlanetDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDisplayViewController.swift; sourceTree = "<group>"; };
+		70B24CD226327402007140C9 /* FractionDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionDisplayViewController.swift; sourceTree = "<group>"; };
 		71935C7C2630A882006A500B /* PlanetGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71935C7F2630A882006A500B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71935C812630A882006A500B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +31,7 @@
 		71935C8B2630A883006A500B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71935C8D2630A883006A500B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71935C992630AB61006A500B /* Oliver_Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oliver_Functions.swift; sourceTree = "<group>"; };
-		71935CC22630B235006A500B /* OliverTestYard.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OliverTestYard.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		71935CC52632AF12006A500B /* DetailLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLookup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +48,6 @@
 		71935C732630A882006A500B = {
 			isa = PBXGroup;
 			children = (
-				71935CC22630B235006A500B /* OliverTestYard.playground */,
 				71935C7E2630A882006A500B /* PlanetGenerator */,
 				71935C7D2630A882006A500B /* Products */,
 			);
@@ -65,9 +69,12 @@
 				71935C812630A882006A500B /* SceneDelegate.swift */,
 				71935C832630A882006A500B /* ViewController.swift */,
 				71935C852630A882006A500B /* Main.storyboard */,
-				71935C882630A883006A500B /* Assets.xcassets */,
+				70B24CD226327402007140C9 /* FractionDisplayViewController.swift */,
+				70B24CCE2631F336007140C9 /* PlanetDisplayViewController.swift */,
 				71935C8A2630A883006A500B /* LaunchScreen.storyboard */,
+				71935C882630A883006A500B /* Assets.xcassets */,
 				71935C8D2630A883006A500B /* Info.plist */,
+				71935CC52632AF12006A500B /* DetailLookup.swift */,
 			);
 			path = PlanetGenerator;
 			sourceTree = "<group>";
@@ -145,7 +152,10 @@
 				71935C842630A882006A500B /* ViewController.swift in Sources */,
 				71935C802630A882006A500B /* AppDelegate.swift in Sources */,
 				71935C9A2630AB61006A500B /* Oliver_Functions.swift in Sources */,
+				70B24CD326327402007140C9 /* FractionDisplayViewController.swift in Sources */,
+				70B24CCF2631F336007140C9 /* PlanetDisplayViewController.swift in Sources */,
 				71935C822630A882006A500B /* SceneDelegate.swift in Sources */,
+				71935CC62632AF12006A500B /* DetailLookup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -405,7 +405,7 @@ func generatePlanet() -> PlanetCode{
     }
     // Generate tech level and prevent negatives from existing. There's nothing lower than 0
     // when 0 represents "Pre-Neolithic Society" (They haven't even figured out how to use a stick).
-    planet.tech = rollD6(dice: 2) + techMod
+    planet.tech = rollD6(dice: 1) + techMod
     if planet.tech < 0{
         planet.tech = 0
     }
