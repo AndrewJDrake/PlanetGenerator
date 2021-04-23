@@ -264,3 +264,61 @@ func govLookup(code: Int) -> String{
     
     return gimmie
 }
+
+func toHex(decimal: Int) -> String{
+    var gimmie = ""
+    
+    if decimal >= 0 && decimal < 10{
+        gimmie = String(decimal)
+    }
+    else if decimal == 10{
+        gimmie = "A"
+    }
+    else if decimal == 11{
+        gimmie = "B"
+    }
+    else if decimal == 12{
+        gimmie = "C"
+    }
+    else if decimal == 13{
+        gimmie = "D"
+    }
+    else if decimal == 14{
+        gimmie = "E"
+    }
+    else if decimal == 15{
+        gimmie = "F"
+    }
+    
+    return gimmie
+}
+
+func buildTrace(planet: PlanetCode) -> String{
+    var gimmie = ""
+    
+    gimmie += toHex(decimal: planet.size)
+    gimmie += toHex(decimal: planet.atmo)
+    gimmie += toHex(decimal: planet.hydr)
+    gimmie += toHex(decimal: planet.mGov.class)
+    gimmie += toHex(decimal: planet.lawL)
+    gimmie += toHex(decimal: planet.tech)
+    gimmie += " "
+    if planet.navy{
+        gimmie += "N"
+    }
+    if planet.scou{
+        gimmie += "S"
+    }
+    if planet.reas{
+        gimmie += "R"
+    }
+    gimmie += " "
+    if (planet.TrCo.count-1 > 0){
+        for i in 0...(planet.TrCo.count-1){
+            gimmie += planet.TrCo[i] + " "
+        }
+    }
+    
+    return gimmie
+    
+}

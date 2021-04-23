@@ -31,7 +31,7 @@ struct PlanetCode {
 // Integer value of the result.
 func rollD6(dice:Int) -> Int{
     var value: Int = 0
-    for _ in 0...dice {
+    for _ in 0..<dice {
         value = value + Int.random(in:1...6)
     }
     return value
