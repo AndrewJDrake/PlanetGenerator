@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="5ik-9p-CWP">
-                                <rect key="frame" x="16" y="60" width="382" height="400"/>
+                                <rect key="frame" x="16" y="60" width="382" height="340"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Go1-3Y-ZBN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="250"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-04-21 at 7.06.09 PM" translatesAutoresizingMaskIntoConstraints="NO" id="rKJ-Nm-L0O">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rKJ-Nm-L0O">
                                                 <rect key="frame" x="66" y="0.0" width="250" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="M27-ht-g1k"/>
@@ -32,7 +32,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gVW-wu-cnB">
-                                        <rect key="frame" x="0.0" y="310" width="382" height="90"/>
+                                        <rect key="frame" x="0.0" y="310" width="382" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT1-5m-Hme">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
@@ -43,17 +43,6 @@
                                                 </state>
                                                 <connections>
                                                     <segue destination="fPh-pt-3zL" kind="presentation" identifier="PlanetDisplaySegue" modalPresentationStyle="fullScreen" id="5K0-e4-lvh"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-dF-9JF">
-                                                <rect key="frame" x="0.0" y="60" width="382" height="30"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                                                <state key="normal" title="Faction Display">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="eDJ-Fp-AUe" kind="presentation" identifier="FractionDisplaySegueIdentifier" modalPresentationStyle="fullScreen" id="sUX-4A-oo3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -221,6 +210,9 @@
                                                 <state key="normal" title="Planetory Gov.">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="PlanetGovButton:" destination="F2b-OE-qUY" eventType="touchUpInside" id="Wz9-QE-rOj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -233,6 +225,9 @@
                                                 <state key="normal" title="Faction 1">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="FactionButton1:" destination="F2b-OE-qUY" eventType="touchUpInside" id="MdV-B5-HV9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J14-hT-y9G">
                                                 <rect key="frame" x="97.5" y="0.0" width="97" height="30"/>
@@ -240,6 +235,9 @@
                                                 <state key="normal" title="Faction 2">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="FactionButton2:" destination="F2b-OE-qUY" eventType="touchUpInside" id="zMl-DL-TAX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg8-Iz-AsG">
                                                 <rect key="frame" x="194.5" y="0.0" width="97.5" height="30"/>
@@ -247,6 +245,9 @@
                                                 <state key="normal" title="Faction 3">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="FactionButton3:" destination="F2b-OE-qUY" eventType="touchUpInside" id="fEP-mZ-rWj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BI-cY-cI3">
                                                 <rect key="frame" x="292" y="0.0" width="97" height="30"/>
@@ -254,6 +255,9 @@
                                                 <state key="normal" title="Faction 4">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="FactionButton4:" destination="F2b-OE-qUY" eventType="touchUpInside" id="JC1-bh-FCO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -282,6 +286,11 @@
                     <connections>
                         <outlet property="AtmoCode" destination="i0l-dF-DNC" id="yhA-2K-zqT"/>
                         <outlet property="CultureQuirk" destination="fpb-hh-Y3o" id="Con-04-SNm"/>
+                        <outlet property="Fac1Button" destination="Yg2-5o-sKN" id="EqI-ve-lqY"/>
+                        <outlet property="Fac2Button" destination="J14-hT-y9G" id="Tra-Q6-1h1"/>
+                        <outlet property="Fac3Button" destination="jg8-Iz-AsG" id="a5S-9P-TH5"/>
+                        <outlet property="Fac4Button" destination="6BI-cY-cI3" id="Qtu-AH-Nog"/>
+                        <outlet property="GovButton" destination="aBo-Jk-IOG" id="Cvj-8q-s6U"/>
                         <outlet property="GovCode" destination="HEc-4C-rZm" id="kHz-3V-as4"/>
                         <outlet property="HydroCode" destination="AZH-50-Pv0" id="517-JP-ojA"/>
                         <outlet property="LawCode" destination="GSc-ja-UQ2" id="eRm-Sw-IZx"/>
@@ -292,11 +301,12 @@
                         <outlet property="StarportGrade" destination="P10-Rq-hxw" id="Shu-gU-CVA"/>
                         <outlet property="TechCode" destination="U1k-t1-qW5" id="mnh-nk-CQB"/>
                         <outlet property="TradeCodes" destination="bkL-dd-uXa" id="ubr-re-G11"/>
+                        <segue destination="tCq-kq-Iba" kind="show" identifier="ShowFaction" id="oKE-sx-dT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MF-Nl-XoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234.7826086956525" y="69.642857142857139"/>
+            <point key="canvasLocation" x="3162" y="-138"/>
         </scene>
         <!--Fraction Display View Controller-->
         <scene sceneID="3vy-g7-Seh">
@@ -307,7 +317,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KSP-oX-bSc">
-                                <rect key="frame" x="15" y="103" width="384" height="350"/>
+                                <rect key="frame" x="15" y="103" width="384" height="404"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iW3-Ad-BZv">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
@@ -321,28 +331,27 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5VB-1L-FbQ">
-                                        <rect key="frame" x="0.0" y="50" width="384" height="112"/>
+                                        <rect key="frame" x="0.0" y="50" width="384" height="166"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtB-x5-2kJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Faction Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hk4-dh-qrV">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sys of Gov." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBH-kC-ubj">
-                                                <rect key="frame" x="0.0" y="30.5" width="384" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="44" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cultural Quirk:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbW-1v-jJy">
-                                                <rect key="frame" x="0.0" y="61" width="384" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="88" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planetory Gov." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df0-IE-dVc">
-                                                <rect key="frame" x="0.0" y="91.5" width="384" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="132" width="384" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -350,7 +359,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bFf-DZ-Cx9">
-                                        <rect key="frame" x="0.0" y="182" width="384" height="81.5"/>
+                                        <rect key="frame" x="0.0" y="236" width="384" height="81.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vg-vA-2vo">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="25.5"/>
@@ -368,7 +377,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z7o-wy-rwU">
-                                        <rect key="frame" x="0.0" y="283.5" width="384" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="337.5" width="384" height="66.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hall Of Fame:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gec-2E-RPN">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
@@ -400,12 +409,19 @@
                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.fill" catalog="system" id="Q79-5a-O9Z">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="Mainfromfractiondisplay" modalPresentationStyle="fullScreen" id="17A-ga-BQ6"/>
+                                <action selector="GoBack:" destination="tCq-kq-Iba" id="1vh-oe-HUh"/>
+                                <segue destination="rFp-5l-ROr" kind="unwind" unwindAction="unwinderWithUnwindSegue:" id="D5T-R2-bLP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="GovLabel" destination="df0-IE-dVc" id="SNe-LK-PqE"/>
+                        <outlet property="QuirkLabel" destination="MbW-1v-jJy" id="6t7-uE-1r5"/>
+                        <outlet property="SystemLabel" destination="tBH-kC-ubj" id="uLR-He-JmG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dts-Il-dF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rFp-5l-ROr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4889.8550724637689" y="99.776785714285708"/>
         </scene>
@@ -429,32 +445,9 @@
             </objects>
             <point key="canvasLocation" x="2324.6376811594205" y="69.642857142857139"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9fH-zs-A6u">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eDJ-Fp-AUe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YRL-GM-zQx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tCq-kq-Iba" kind="relationship" relationship="rootViewController" id="CpW-A5-7Z0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8B-44-3aq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3979.7101449275365" y="99.776785714285708"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ecx-RL-8db"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="Screen Shot 2021-04-21 at 7.06.09 PM" width="1714" height="1722"/>
+        <image name="Logo" width="300" height="300"/>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="staroflife.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

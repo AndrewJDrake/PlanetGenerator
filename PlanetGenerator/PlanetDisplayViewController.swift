@@ -10,6 +10,7 @@ import UIKit
 class PlanetDisplayViewController: UIViewController {
 
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    var selectedFaction: (class:Int, strength:String, diff:String, name:String)!
     
     var buildAString: String = ""
     
@@ -25,6 +26,11 @@ class PlanetDisplayViewController: UIViewController {
     @IBOutlet weak var CultureQuirk: UILabel!
     @IBOutlet weak var TradeCodes: UILabel!
     @IBOutlet weak var StarportGrade: UILabel!
+    @IBOutlet weak var Fac1Button: UIButton!
+    @IBOutlet weak var Fac2Button: UIButton!
+    @IBOutlet weak var Fac3Button: UIButton!
+    @IBOutlet weak var Fac4Button: UIButton!
+    @IBOutlet weak var GovButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,11 @@ class PlanetDisplayViewController: UIViewController {
         LawCode.text = "Law: "
         TechCode.text = "Tech: "
         StarportGrade.text = "Starport: "
+        GovButton.isHidden = true
+        Fac1Button.isHidden = true
+        Fac2Button.isHidden = true
+        Fac3Button.isHidden = true
+        Fac4Button.isHidden = true
         
         // Do any additional setup after loading the view.
     }
@@ -69,8 +80,64 @@ class PlanetDisplayViewController: UIViewController {
         }
         TradeCodes.text = buildAString
         StarportGrade.text = "Starport: " + String(delegate.DisplayPlanet.star)
+        GovButton.isHidden = false
+        if (delegate.DisplayPlanet.fact.count >= 1){
+            Fac1Button.isHidden = false
+        }
+        else{
+            Fac1Button.isHidden = true
+        }
+        if (delegate.DisplayPlanet.fact.count >= 2){
+            Fac2Button.isHidden = false
+        }
+        else{
+            Fac2Button.isHidden = true
+        }
+        if (delegate.DisplayPlanet.fact.count >= 3){
+            Fac3Button.isHidden = false
+        }
+        else{
+            Fac3Button.isHidden = true
+        }
+        if (delegate.DisplayPlanet.fact.count >= 4){
+            Fac4Button.isHidden = false
+        }
+        else{
+            Fac4Button.isHidden = true
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowFaction"){
+            let FactionViewContainer = segue.destination as! FractionDisplayViewController
+            FactionViewContainer.faction = selectedFaction
+        }
+    }
+    
+    @IBAction func PlanetGovButton(_ sender: Any) {
+        selectedFaction = delegate.DisplayPlanet.mGov
+        performSegue(withIdentifier: "ShowFaction", sender: nil)
+    }
+    @IBAction func FactionButton1(_ sender: Any) {
+        selectedFaction = delegate.DisplayPlanet.fact[0]
+        performSegue(withIdentifier: "ShowFaction", sender: nil)
+    }
+    @IBAction func FactionButton2(_ sender: Any) {
+        selectedFaction = delegate.DisplayPlanet.fact[1]
+        performSegue(withIdentifier: "ShowFaction", sender: nil)
+    }
+    @IBAction func FactionButton3(_ sender: Any) {
+        selectedFaction = delegate.DisplayPlanet.fact[2]
+        performSegue(withIdentifier: "ShowFaction", sender: nil)
+    }
+    @IBAction func FactionButton4(_ sender: Any) {
+        selectedFaction = delegate.DisplayPlanet.fact[3]
+        performSegue(withIdentifier: "ShowFaction", sender: nil)
+    }
+    
+    @IBAction func unwinder(unwindSegue: UIStoryboardSegue){
+        
+    }
     /*
     // MARK: - Navigation
 

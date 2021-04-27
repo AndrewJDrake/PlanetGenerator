@@ -9,6 +9,12 @@ import UIKit
 
 class FractionDisplayViewController: UIViewController {
 
+    var faction: (class:Int, strength:String, diff:String, name:String)!
+    
+    @IBOutlet weak var SystemLabel: UILabel!
+    @IBOutlet weak var QuirkLabel: UILabel!
+    @IBOutlet weak var GovLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
           
@@ -22,7 +28,24 @@ class FractionDisplayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        SystemLabel.text = "System of Gov:" + govLookup(code:faction.class)
+        if (faction.diff != ""){
+        QuirkLabel.text = "Cultural Quirk:" + faction.diff
+        }
+        else{
+            QuirkLabel.text = ""
+        }
+        if (faction.strength != ""){
+            GovLabel.text = "Relative Power:" + faction.strength
+        }
+        else{
+            GovLabel.text = ""
+        }
+    }
 
+    @IBAction func GoBack(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
